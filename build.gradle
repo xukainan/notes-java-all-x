@@ -1,0 +1,39 @@
+// 插件管理
+plugins {
+    id 'java'
+    // springboot插件依赖
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
+    // 版本管理插件依赖
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+allprojects {
+    // 将以下内容移动到allprojects配置中
+    group = 'top.uaian'
+    version = '0.0.1'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    // 将plugins中的所有插件引入到全局配置中（根据默认初始化的plugins逐一添加）
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+// 适用于子模块配置
+subprojects {
+    dependencies {
+        implementation 'cn.hutool:hutool-all:5.8.20'
+    }
+}
+
+//// 特定项目配置
+//project(':notes-algorithm'){
+//    dependencies {
+//        implementation project(':notes-utils')
+//    }
+//}
