@@ -1,3 +1,4 @@
 dependencies {
     implementation project(':notes-utils')
+    implementation project(':notes-common-domain')
 }

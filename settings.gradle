@@ -1,4 +1,6 @@
 rootProject.name = 'notes-java-all-x'
 
+include('notes-common-domain')
 include('notes-utils')
 include('notes-algorithm')
+
